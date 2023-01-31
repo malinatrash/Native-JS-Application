@@ -23,7 +23,7 @@ button {
  */
 
 #sidebar {
-    background-color: #E57373;
+    background-color: #006eff;
     padding: 15px;
 }
 
@@ -46,4 +46,8 @@ button {
     #content {
         margin-left: 180px;
     }
+}
+
+.author {
+    font-size: .8rem;
 }
