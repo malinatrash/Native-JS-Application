@@ -1,9 +1,12 @@
 import './static/style.css'
 import {isValid} from "./utils";
+import {Question} from "./question";
 
 const form = document.getElementById('form')
 const input = form.querySelector('#question-input')
 const sumbitButton = form.querySelector('#submit')
+
+window.addEventListener('load', Question.renderList)
 
 form.addEventListener('submit', submitFormHandler)
 input.addEventListener('input', () => {
@@ -19,10 +22,13 @@ function submitFormHandler(event) {
 
         }
         sumbitButton.disabled = true
+
         // Async request to server to save question
-        console.log('Question: ', question);
-        input.value = ''
-        input.className = ''
-        sumbitButton.disabled = false
+        Question.create(question).then(() => {
+            console.log('Question: ', question);
+            input.value = ''
+            input.className = ''
+            sumbitButton.disabled = false
+        })
     }
 }
