@@ -3,6 +3,7 @@ import {createModal, isValid} from "./utils";
 import {Question} from "./question";
 import {authWithEmailAndPassword, getAuthForm} from "./auth";
 
+
 const form = document.getElementById('form')
 const modalButton = document.getElementById('modal-btn')
 const input = form.querySelector('#question-input')
